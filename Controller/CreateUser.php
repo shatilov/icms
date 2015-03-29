@@ -9,7 +9,6 @@ class Controller_CreateUser extends Controller_Base_View implements Controller_C
 {
     public function init()
     {
-        fatal($_POST);
         $this->setTemplate('/View/CreateUser/view.phtml');
     }
 

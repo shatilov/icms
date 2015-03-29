@@ -12,6 +12,7 @@ class Controller_Base_View
 
     function __construct()
     {
+        $this->_template = '/View/view.phtml';
         $this->_css = array();
     }
     protected function setTemplate($template)
