@@ -1,6 +1,7 @@
 <?php
 
 return array(
-    'index'        => 'Controller_View',
-    'create_users' => 'Controller_CreateUser',
+    'index'     => 'Controller_View',
+    'register'  => 'Controller_Register',
+	'login'     => 'Controller_Login',
 );

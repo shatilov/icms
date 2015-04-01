@@ -1,15 +1,15 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: shatilov
+ * User: i.suhoparov
  * Date: 05.12.14
  * Time: 16:41
  */
-class Controller_CreateUser extends Controller_Base_View implements Controller_ControllerInterface
+class Controller_Register extends Controller_Base_View implements Controller_ControllerInterface
 {
     public function init()
     {
-        $this->setTemplate('/View/CreateUser/view.phtml');
+        $this->setTemplate('/View/Register/view.phtml');
     }
 
     public function execute()
@@ -18,7 +18,7 @@ class Controller_CreateUser extends Controller_Base_View implements Controller_C
 
         $this->process();
 
-        $this->display();
+        echo $this->display();
     }
 
     protected function process()

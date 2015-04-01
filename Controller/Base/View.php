@@ -22,8 +22,10 @@ class Controller_Base_View
 
     protected function display()
     {
-        $template_path = dirname(__FILE__) .'/../../'. $this->_template;
-        require_once $template_path;
+        $template_path = dirname(__FILE__) .'/../..'. $this->_template;
+	    ob_start();
+	    include $template_path;
+	    return ob_get_clean();
     }
 
     protected function addCSS($css_path)
