@@ -11,6 +11,18 @@ class Data_Users extends Data_MySql{
     {
         $sql = "insert into users(login,password,fullname) values ('{$login}','{$password}','{$fullname}')";
         return $this->getDb()->query($sql);
+
+    }
+    public function search($login)
+    {
+
+        $sql= "SELECT * FROM `users` WHERE login LIKE  '{$login}'";
+        if($login=="")
+            $sql= "SELECT * FROM  `users`";
+
+
+        $result = $this->getDb()->query($sql);
+        return $result->rowCount();
     }
 
     public function getUser()
