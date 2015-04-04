@@ -11,4 +11,6 @@ class Controller_View extends Controller_Base_View implements Controller_Control
 	{
         echo $this->display();
 	}
+
+
 }

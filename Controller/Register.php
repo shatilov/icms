@@ -23,18 +23,32 @@ class Controller_Register extends Controller_Base_View implements Controller_Con
 
     protected function process()
     {
-        if($_POST)
-        {
+        if ($_POST) {
             $date_users = new Data_Users();
+            $date_users->add();
 
             $login = $_POST['login'];
-            $password = $_POST['password'];
-            $fullname = $_POST['fullname'];
+            $num_rows = $date_users->search($login);
+            if ($num_rows == 0) {
+                if ($_POST['password1'] == $_POST['password2']) {
+                    $password = $_POST['password1'];
+                    $secondname = $_POST['secondname'];
+                    $email = $_POST['email'];
+                   // $name = $_POST['name'];
+                    $name= $_POST['name'];
+                    $sex = $_POST['sex'];
+                    if ($date_users->creteUser($login, $password, $secondname, $email, $name,$sex)) {
+                        echo 'Успешно добавлено';
+                    }
+                } else {
+                    echo 'Параоли не савподают';
 
-            if($date_users->creteUser($login,$password,$fullname))
-            {
-                echo 'Успешно добавлено';
+                }
+            } else {
+                echo 'Пользователь с таким именем уже существует!';
+
             }
+
         }
     }
 }

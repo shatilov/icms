@@ -1,53 +1,64 @@
+
 <div class="container-fluid">
-	<section class="container">
-		<div class="container-page">
-			<div class="col-md-6">
-				<h3 class="dark-grey">Регистрация</h3>
+    <section class="container">
 
-				<div class="form-group col-lg-12">
-					<label>Ваше имя</label>
-					<input type="" name="" class="form-control" id="" value="">
-				</div>
+        <form action="" method="post">
+        <div class="container-page">
+            <div class="col-md-6">
+                <h3 class="dark-grey">Регистрация</h3>
+                <div class="form-group col-lg-7">
+                    <label>Логин</label>
+                    <input type="text" name="login" class="form-control" id="" value="" required>
+                </div>
+                <div class="form-group col-lg-4">
 
-				<div class="form-group col-lg-6">
-					<label>Пароль</label>
-					<input type="password" name="" class="form-control" id="" value="">
-				</div>
+                </div>
+                <div class="form-group col-lg-7">
+                    <label>Ваше Имя</label>
+                    <input type="text" name="name" class="form-control" id="" value="" required>
+                </div>
 
-				<div class="form-group col-lg-6">
-					<label>Повторите пароль</label>
-					<input type="password" name="" class="form-control" id="" value="">
-				</div>
+                <div class="form-group col-lg-4">
+                    <label>Пол</label>
+                    <select name="sex" class="form-control"  >
+                        <option> Mужчина
+                        <option> Женщина
+                    </select>
 
-				<div class="form-group col-lg-6">
-					<label>Email адрес</label>
-					<input type="" name="" class="form-control" id="" value="">
-				</div>
+                </div>
+                <div class="form-group col-lg-7">
+                    <label>Ваша Фамилия</label>
+                    <input type="text" name="secondname" class="form-control" id="" value=""  >
+                </div>
+                <div class="form-group col-lg-7">
+                    <label>Пароль</label>
+                    <input type="password" name="password1" class="form-control" id="" value="" required>
+                    <label>Повторите пароль</label>
+                    <input type="password" name="password2" class="form-control" id="" value="" required>
+                </div>
 
-				<div class="form-group col-lg-6">
-					<label>Повторите Email адрес</label>
-					<input type="" name="" class="form-control" id="" value="">
-				</div>
-			</div>
+                <div class="form-group col-lg-7">
+                    <label>E-mail адрес</label>
+                    <input type="email" name="email" class="form-control" id="" value="" required>
+                </div>
 
-			<div class="col-md-6">
-				<h3 class="dark-grey">Правила использования</h3>
-				<p>
-					By clicking on "Register" you agree to The Company's' Terms and Conditions
-				</p>
-				<p>
-					While rare, prices are subject to change based on exchange rate fluctuations -
-					should such a fluctuation happen, we may request an additional payment. You have the option to request a full refund or to pay the new price. (Paragraph 13.5.8)
-				</p>
-				<p>
-					Should there be an error in the description or pricing of a product, we will provide you with a full refund (Paragraph 13.5.6)
-				</p>
-				<p>
-					Acceptance of an order by us is dependent on our suppliers ability to provide the product. (Paragraph 13.5.6)
-				</p>
+            </div>
 
-				<button type="submit" class="btn btn-primary">Зарегистрироваться</button>
-			</div>
-		</div>
-	</section>
+            <div class="col-md-5">
+                <h3 class="dark-grey">Правила заполнения</h3>
+                <p>
+                   Обязательно заполните все поля!
+                </p>
+                <p>
+                    Пароли должны совпадать!
+                </p>
+                <p>
+                    Email должен быть достоверным
+                </p>
+
+                <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+            </div>
+        </div>
+        </form>
+    </section>
 </div>

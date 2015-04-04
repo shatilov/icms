@@ -5,10 +5,15 @@
  * Date: 05.12.14
  * Time: 17:06
  */
-class Controller_404 implements Controller_ControllerInterface
+class Controller_404 extends Controller_Base_View  implements Controller_ControllerInterface
 {
+    public function init()
+    {
+        $this->setTemplate('/View/404/view.phtml');
+    }
 	public function execute()
 	{
-		echo '404';
+        $this->init();
+        echo $this->display();
 	}
 }

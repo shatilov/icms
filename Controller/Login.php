@@ -25,15 +25,22 @@ class Controller_Login extends Controller_Base_View implements Controller_Contro
     {
         if($_POST)
         {
+
             $date_users = new Data_Users();
 
-            $login = $_POST['login'];
+            $login = $_POST['username'];
             $password = $_POST['password'];
-            $fullname = $_POST['fullname'];
 
-            if($date_users->creteUser($login,$password,$fullname))
+            if($date_users->login($login,$password))
             {
-                echo 'Успешно добавлено';
+                echo 'Вы зашли на сайт';
+                $this->setTemplate('/View/Exit/view.phtml');
+                echo $this->display();
+
+
+            }
+            else{
+                echo 'Неправильный логин или пароль';
             }
         }
     }

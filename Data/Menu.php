@@ -12,6 +12,7 @@ class Data_Menu extends Data_MySql{
 		return array(
 			"Вход"          => "login",
 			"Регистрация"   => "register",
-		);
+            "Информация"         => "exit" ,
+        );
 	}
 }
