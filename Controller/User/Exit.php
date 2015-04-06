@@ -5,7 +5,7 @@
  * Date: 05.12.14
  * Time: 16:41
  */
-class Controller_Exit implements Controller_ControllerInterface
+class Controller_User_Exit implements Controller_Interface_Base
 {
     public function execute()
     {

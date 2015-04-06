@@ -6,7 +6,7 @@
  * Time: 16:41
  */
 
-class Controller_Register extends Controller_Base_View implements Controller_ControllerInterface
+class Controller_User_Register extends Controller_Base_View implements Controller_Interface_Base
 {
 	protected $_check_captcha = false;
 

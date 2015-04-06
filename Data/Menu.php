@@ -10,24 +10,38 @@ class Data_Menu extends Data_MySql{
 	public static function getRightMenu()
 	{
 		$user = Data_CurrentUser::get();
-		$user_name = $user['login'];
-		if(Data_CurrentUser::get())
+		$menu = array();
+		if($user)
 		{
-			return array(
+			$user_name = $user->getLogin();
+			$menu =  array_merge($menu , array(
 				"Выход ({$user_name})"    => "exit" ,
-			);
+			));
 		}
 		else
 		{
-			return array(
+			$menu =  array_merge($menu ,  array(
 				"Вход"          => "login",
 				"Регистрация"   => "register",
-			);
+			));
 		}
+
+		return $menu;
 	}
 
 	public static function getMainMenu()
 	{
-		return array();
+		$user = Data_CurrentUser::get();
+		$menu = array();
+		if($user)
+		{
+			if($user->isAdmin())
+			{
+				$menu =  array_merge($menu ,  array(
+					"Управление"          => "admin",
+				));
+			}
+		}
+		return $menu;
 	}
 }

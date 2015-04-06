@@ -11,7 +11,7 @@ function startSession($isUserActivity=true, $prefix=null) {
 	$idLifetime = $sessionLifetime;
 
 	if ( session_id() ) return true;
-	session_name('MYPROJECT'.($prefix ? '_'.$prefix : ''));
+	session_name('SALECATS'.($prefix ? '_'.$prefix : ''));
 	ini_set('session.cookie_lifetime', 0);
 	if ( ! session_start() ) return false;
 

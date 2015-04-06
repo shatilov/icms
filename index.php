@@ -10,7 +10,7 @@ $controllers = require_once dirname(__FILE__) . '/Core/controllers.php';
 $controller = isset($_GET['go']) && !empty($_GET['go']) ? $_GET['go'] : 'index';
 
 /**
- * @var Controller_ControllerInterface|Core_Classes_Jsonp $Controller
+ * @var Controller_Interface_Base|Core_Classes_Jsonp $Controller
  */
 if(isset($controllers[$controller]) && class_exists($controllers[$controller]))
 {
@@ -23,16 +23,18 @@ else
 
 try
 {
-	if($Controller instanceof Core_Classes_Jsonp)
+	if($Controller instanceof Controller_Interface_Access)
 	{
-		$Controller->initCallback();
+		$Controller->checkAccess();
 	}
 	$Controller->execute();
 }
 catch(Exception $e)
 {
+	// тут просто редирект на главную
 	echo '<pre>';
 	print_r($e);
+
 }
 
 

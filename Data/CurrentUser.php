@@ -8,6 +8,7 @@
 class Data_CurrentUser
 {
 	protected static $user_data = array();
+	protected static $user;
 
 	public static function get()
 	{
@@ -23,12 +24,18 @@ class Data_CurrentUser
 			{
 				$sql = "select * from users where user_id = '{$user_id}'";
 				self::$user_data = $sql_db->getDb()->query($sql)->fetch(PDO::FETCH_ASSOC);
+				self::$user = new Data_Model_User(self::$user_data);
 			}
 		}
-		return count(self::$user_data) ? self::$user_data : false;
+
+		return count(self::$user_data) ? self::$user : false;
 	}
 
 
+	public static function isAdmin()
+	{
+
+	}
 
 	public static function set($data)
 	{
