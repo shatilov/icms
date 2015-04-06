@@ -2,6 +2,9 @@
 require_once dirname(__FILE__) . '/Core/functions.php';
 require_once dirname(__FILE__) . '/Core/autoloader.php';
 require_once dirname(__FILE__) . '/Core/medoo.php';
+require_once dirname(__FILE__) . '/Core/session.php';
+
+startSession();
 
 $controllers = require_once dirname(__FILE__) . '/Core/controllers.php';
 $controller = isset($_GET['go']) && !empty($_GET['go']) ? $_GET['go'] : 'index';

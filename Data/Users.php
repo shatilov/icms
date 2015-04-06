@@ -13,7 +13,7 @@ class Data_Users extends Data_MySql{
         return $this->getDb()->query($sql);
     }
 
-	public function creteUser($login, $password, $secondname, $email, $name,$sex)
+	public function createUser($login, $password, $secondname, $email, $name,$sex)
     {
         $date=date("Y-m-d H:i:s");
 
@@ -30,9 +30,9 @@ class Data_Users extends Data_MySql{
         return $this->getDb()->query($sql);
 
     }
+
     public function search($login)
     {
-
         $sql= "SELECT * FROM `users` WHERE login LIKE  '{$login}'";
         if($login=="")
             $sql= "SELECT * FROM  `users`";
@@ -48,11 +48,20 @@ class Data_Users extends Data_MySql{
 
         $result = $this->getDb()->query($sql);
         if( $result->rowCount() == 1)
-            return true;
-        else
-            return false;
+	    {
+		    $user_data = $result->fetch(PDO::FETCH_ASSOC);
+			$this->createSession($user_data['user_id']);
+		    return true;
+	    }
+        else return false;
     }
 
+	protected  function createSession($user_id)
+	{
+		$session_id = session_id();
+		$sql = "INSERT INTO sessions(user_id,session_id) values('{$user_id}' , '{$session_id}')";
+		return $this->getDb()->query($sql);
+	}
 
     public function getUser()
     {

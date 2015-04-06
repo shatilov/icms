@@ -9,10 +9,20 @@ class Data_Menu extends Data_MySql{
 
 	public static function getMainMenu()
 	{
-		return array(
-			"Вход"          => "login",
-			"Регистрация"   => "register",
-            "Информация"         => "exit" ,
-        );
+		$menu = array();
+		if(Data_CurrentUser::get())
+		{
+			return array(
+				"Выход"    => "exit" ,
+			);
+		}
+		else
+		{
+			return array(
+				"Вход"          => "login",
+				"Регистрация"   => "register",
+			);
+		}
+
 	}
 }

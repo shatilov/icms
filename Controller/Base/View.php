@@ -20,6 +20,14 @@ class Controller_Base_View
         $this->_template = $template;
     }
 
+	protected function assign($name , $value)
+	{
+		if(is_string($name) && strlen($name) > 0)
+		{
+			$this->$name = $value;
+		}
+	}
+
     protected function display()
     {
         $template_path = dirname(__FILE__) .'/../..'. $this->_template;

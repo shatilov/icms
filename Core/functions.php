@@ -35,3 +35,11 @@ function get_protocol()
 	);
 	return $scheme;
 }
+
+function redirect($url)
+{
+	header('HTTP/1.0 301 Moved Permanently');
+	header("X-Accel-Expires: 0");
+	header('Location: ' . $url . "\n\n");
+	exit;
+}

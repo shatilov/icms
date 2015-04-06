@@ -26,21 +26,21 @@ class Controller_Login extends Controller_Base_View implements Controller_Contro
         if($_POST)
         {
 
-            $date_users = new Data_Users();
+            $users = new Data_Users();
 
             $login = $_POST['username'];
             $password = $_POST['password'];
 
-            if($date_users->login($login,$password))
+            if($users->login($login,$password))
             {
-                echo 'Вы зашли на сайт';
+	            redirect('/');
                 $this->setTemplate('/View/Exit/view.phtml');
+	            // ТУТ РЕДИРЕКТ НА ГЛАВНУЮ А НЕ ПОДМЕНА ШАБЛОНА
                 echo $this->display();
-
-
             }
-            else{
-                echo 'Неправильный логин или пароль';
+            else
+            {
+	            $this->assign('message','Неправильный логин или пароль');
             }
         }
     }
