@@ -16,19 +16,8 @@ class Data_Users extends Data_MySql{
 	public function createUser($login, $password, $secondname, $email, $name,$sex)
     {
         $date=date("Y-m-d H:i:s");
-
-        $sql = "insert into users(login,password,email,name,secondname,registration,sex) values ('{$login}','".md5($password)."','{$email}','{$name}','{$secondname}','{$date}'";
-
-        if($sex == "Mужчина")
-        {
-            $sql=$sql.",'1')";
-        }
-        else
-        {
-            $sql=$sql.",'0')";
-        }
+        $sql = "insert into users(login,password,email,name,secondname,registration,sex) values ('{$login}','".md5($password)."','{$email}','{$name}','{$secondname}','{$date}' , {$sex}";
         return $this->getDb()->query($sql);
-
     }
 
     public function search($login)

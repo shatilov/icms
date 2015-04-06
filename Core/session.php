@@ -7,8 +7,8 @@
  */
 function startSession($isUserActivity=true, $prefix=null) {
 
-	$sessionLifetime = 300;
-	$idLifetime = 60;
+	$sessionLifetime = 60*15; // 15 минут
+	$idLifetime = $sessionLifetime;
 
 	if ( session_id() ) return true;
 	session_name('MYPROJECT'.($prefix ? '_'.$prefix : ''));
