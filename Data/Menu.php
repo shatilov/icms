@@ -7,13 +7,14 @@
  */
 class Data_Menu extends Data_MySql{
 
-	public static function getMainMenu()
+	public static function getRightMenu()
 	{
-		$menu = array();
+		$user = Data_CurrentUser::get();
+		$user_name = $user['login'];
 		if(Data_CurrentUser::get())
 		{
 			return array(
-				"Выход"    => "exit" ,
+				"Выход ({$user_name})"    => "exit" ,
 			);
 		}
 		else
@@ -23,6 +24,10 @@ class Data_Menu extends Data_MySql{
 				"Регистрация"   => "register",
 			);
 		}
+	}
 
+	public static function getMainMenu()
+	{
+		return array();
 	}
 }
