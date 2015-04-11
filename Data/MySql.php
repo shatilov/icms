@@ -14,10 +14,10 @@ class Data_MySql
 		$this->database = new medoo(array(
 			// required
 			'database_type' => 'mysql',
-			'database_name' => 'icms',
+			'database_name' => 'maesz_icms',
 			'server'        => 'localhost',
-			'username'      => 'icms',
-			'password'      => 'icms',
+			'username'      => '045204178_icms',
+			'password'      => 'icms123',
 			// optional
 			'port'          => 3306,
 			'charset'       => 'utf8',
