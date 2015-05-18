@@ -20,7 +20,8 @@ class Helper_Menu
 			$links[] = '<li '.$active.'><a href="?go='.$link.'">'.$title.'</a></li>';
 		}
 
-		echo '<ul class="nav navbar-nav">'.implode(' ',$links).'</ul>';
+		echo '<ul class="nav navbar-nav">
+            '.implode(' ',$links).'</ul>';
 	}
 
 	public static function displayRight()

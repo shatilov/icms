@@ -41,7 +41,12 @@ class Data_Menu extends Data_MySql{
 					"Управление"          => "admin",
 				));
 			}
+            $menu =  array_merge($menu ,  array(
+                "Профиль"          => "Profile",
+            ));
+
 		}
+
 		return $menu;
 	}
 }

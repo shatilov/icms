@@ -2,7 +2,7 @@
 /**
  * Created by PhpStorm.
  * User: i.suhoparov
- * Date: 05.12.14
+ * Date: 05.г12.14
  * Time: 16:41
  */
 class Controller_User_Login extends Controller_Base_View implements Controller_Interface_Base
@@ -34,9 +34,6 @@ class Controller_User_Login extends Controller_Base_View implements Controller_I
             if($users->login($login,$password))
             {
 	            redirect('/');
-                $this->setTemplate('/View/Exit/view.phtml');
-	            // ТУТ РЕДИРЕКТ НА ГЛАВНУЮ А НЕ ПОДМЕНА ШАБЛОНА
-                echo $this->display();
             }
             else
             {

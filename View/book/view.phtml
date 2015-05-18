@@ -1,0 +1,8 @@
+ <h1>Книга <?php  echo $_GET['id']; ?> </h1> <br>
+ <?php
+     echo $_GET['id'];
+     $user = Controller_book_View::process($_GET['id']);
+     echo "<pre>";
+        print_r($user);
+     echo "</pre>";
+ ?>

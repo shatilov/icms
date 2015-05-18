@@ -28,7 +28,7 @@ class Controller_User_Register extends Controller_Base_View implements Controlle
     {
         if ($_POST) {
             $date_users = new Data_Users();
-            $date_users->add();
+
 	        $pre_check = $this->_check_captcha ?
 		        ($_SESSION['secpic'] != null) && ($_SESSION['secpic'] == strtolower($_POST['captch'])) : true;
 

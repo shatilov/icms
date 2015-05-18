@@ -7,10 +7,10 @@
  */
 class Data_Users extends Data_MySql{
 
-    public function add()
+    public function add($zn)
     {
-        $sql = "insert into log(post_l) values ('2')";
-        return $this->getDb()->query($sql);
+        $sql = "insert into log(post_l) values ('{$zn}')";
+        return $this->getdb()->query($sql);
     }
 
 	public function createUser($login, $password, $secondname, $email, $name,$sex)

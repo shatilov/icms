@@ -1,0 +1,27 @@
+    <?php $user = Controller_Profile_View::gl3();
+    $s = $user->toArray() ; ?>
+    <div class="page-header">
+
+
+        <h1>Профиль </h1>
+
+    </div>
+
+
+
+
+                        <?php
+                        if( $s["sex"])
+                            echo '<img src ="http://cs625327.vk.me/v625327236/31c72/IKMrkjR-pj8.jpg"';
+                        else
+                            echo '<img src ="http://cs625327.vk.me/v625327236/31c6b/KYMKjHBm2tY.jpg"';
+                        ?>
+
+    <pre>
+                Имя           <?php echo $s["name"]; ?>
+                Email         <?php echo $s["email"]; ?> <br>
+    </pre>
+            </div>
+            </div>
+        </div>
+    </div>
