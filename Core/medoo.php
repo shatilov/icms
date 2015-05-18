@@ -727,6 +727,23 @@ class medoo
 		return count($lastId) > 1 ? $lastId : $lastId[ 0 ];
 	}
 
+    public function simpleInsert($table, $fields)
+    {
+        $values = array();
+        $columns = array();
+
+        foreach ($fields as $key => $value)
+        {
+            $columns[] = $key;
+            $values[]  = $value;
+        }
+        $sql = "INSERT INTO " . $table . " ( " . implode(", ", $columns) . ") VALUES ( '" . implode($values, "',' ") . " ')";
+
+        $this->exec($sql);
+
+        return $this->pdo->lastInsertId();
+    }
+
 	public function update($table, $data, $where = null)
 	{
 		$fields = array();
