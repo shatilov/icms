@@ -25,12 +25,18 @@ class Data_book extends Data_MySql
         $result = $this->getDb()->query($sql);
         return $result;
     }
-    public function  add($name,$author,$ganre,$year,$img_id)
-    {
-        $sql = "INSERT INTO books (`name`, `author`, `ganre`, `year`, `img_id`)
-        VALUES ('{$name}','{$author}','{$ganre}','{$year}','{$img_id}')";
-        return $this->getDb()->query($sql);
 
+    public function add($name,$author,$ganre,$year,$img_id)
+    {
+        $fields = array(
+            'name' => $name ,
+            'author'=> $author ,
+            'ganre'=> $ganre ,
+            'year'=> $year ,
+            'img_id'=> $img_id
+        );
+
+        return $this->getDb()->simpleInsert('books', $fields);
     }
 
 
