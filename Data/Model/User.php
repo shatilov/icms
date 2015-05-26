@@ -15,7 +15,7 @@ class Data_Model_User
 	protected $_sex;
 	protected $_email;
 	protected $_registration;
-
+    protected $_avatar_id;
 	protected $_data;
 
 	const ADMIN_ROLE = 'admin';
@@ -50,6 +50,10 @@ class Data_Model_User
 		{
 			$this->_login = $data['login'];
 		}
+        if(isset($data['avatar_id']))
+        {
+            $this->_avatar_id = $data['avatar_id'];
+        }
 
 		if(isset($data['secondname']))
 		{
@@ -77,10 +81,22 @@ class Data_Model_User
 		}
 	}
 
-	public function getLogin()
-	{
-		return $this->_login;
-	}
+    public function getLogin()
+    {
+        return $this->_login;
+    }
+    public function getId()
+    {
+        return $this->_user_id;
+    }
+    public function getName()
+    {
+        return $this->_name;
+    }
+    public function getAvatar()
+    {
+        return $this->_avatar_id;
+    }
 
 	public function isAdmin()
 	{
