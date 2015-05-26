@@ -59,3 +59,47 @@ a:hover img {
 img.igorpage{
     height: 100px;
 }
+img.book_profile{
+    height: 220px;
+}
+
+/*   25.05  */
+
+
+.comment{
+    margin:auto;
+    margin-bottom: 10px;
+    width:600px;
+    min-height: 120px;
+    border: solid 1px gray;
+    padding:5px;
+    text-align:justify;
+    text-align:right;
+}
+.txt{
+    min-height: 90px;
+    padding-top:20px;
+    width:560px;
+    color:black;
+    text-align:justify;
+}
+.txt textarea{
+    position: relative;
+    width:80%;
+    max-width:80%;
+    margin-bottom:5px;
+}
+
+.avamin{
+    text-align: center;
+    height:100%;
+    width:100px;
+    float:left;
+    padding:10px;
+    color:gray;
+}
+
+.avamin img{
+    height: 50px;
+    width:50px;
+}
