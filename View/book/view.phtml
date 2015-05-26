@@ -1,8 +1,34 @@
- <h1>Книга <?php  echo $_GET['id']; ?> </h1> <br>
- <?php
-     echo $_GET['id'];
-     $user = Controller_book_View::process($_GET['id']);
-     echo "<pre>";
-        print_r($user);
-     echo "</pre>";
- ?>
+<?php $user = Controller_book_View::process($_GET['id']); ?>
+
+
+ <h1> <?php  echo $user["name"]; ?> </h1>
+ <hr>
+
+<div class="row">
+    <!-- left column -->
+    <div class="col-md-3">
+        <div class="text-center">
+            <img src="<?php $im = new  Data_image();
+                            echo $im->get_url($user["img_id"]) ; ?>" class="book_profile"   alt="avatar">
+
+        </div>
+    </div>
+
+    <!-- edit form column -->
+    <div class="col-md-5 personal-info">
+        <!-- Будет выходить ошибка если в форме лишняя информация -->
+        <h3>Информация</h3>
+
+        <div class="form-group">
+            <label class="col-lg-12 control-label">Автор:  <?php  echo $user["author"]; ?> </label>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-12 control red">Жанр: <?php  echo $user["ganre"]; ?>  </label>
+        </div>
+        <div class="form-group">
+            <label class="col-md-12 control-label">Год:  <?php  echo $user["year"]; ?> </label>
+        </div>
+    </div>
+</div>
+    <hr>
+<?php Helper_Lenta::getlenta($_GET['id'])?>
