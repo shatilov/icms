@@ -52,8 +52,20 @@ class Data_Users extends Data_MySql{
 		return $this->getDb()->query($sql);
 	}
 
-    public function getUser()
+    public function get_name($id)
     {
-
+        $sql= "SELECT name
+                FROM  `users`
+                WHERE user_id =  '{$id}'";
+        $r= $this->getDb()->query($sql)->fetch();
+        return $r['name'];
+    }
+    public function get_ava($id)
+    {
+        $sql= "SELECT avatar_id
+                FROM  `users`
+                WHERE user_id =  '{$id}'";
+        $r= $this->getDb()->query($sql)->fetch();
+        return $r['avatar_id'];
     }
 }
