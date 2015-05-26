@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="salecats">
+  <component name="PublishConfigData" autoUpload="Always" serverName="maesz">
     <serverData>
-      <paths name="salecats">
+      <paths name="maesz">
         <serverdata>
           <mappings>
             <mapping deploy="/" local="$PROJECT_DIR$" web="/" />

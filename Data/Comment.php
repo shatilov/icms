@@ -31,7 +31,7 @@ class Data_Comment extends Data_MySql
         $fields = array(
             'text' => $tex ,
             'date' => date("Y-m-d") ,
-            'book_id'=> $b_id ,
+            'boo1k_id'=> $b_id ,
             'user_id'=> $u_is ,
         );
 

@@ -36,7 +36,6 @@ class Controller_book_addbook extends Controller_Base_View implements Controller
     }
     protected function process()
     {
-        $img_id=1;
         if ($_FILES["pictures"]) {
             foreach ($_FILES["pictures"]["error"] as $key => $error) {
                 if ($error == UPLOAD_ERR_OK) {
@@ -47,9 +46,9 @@ class Controller_book_addbook extends Controller_Base_View implements Controller
                 }
             }
             $img = new Data_image();
-            $img->add($name,date("Y-m-d H:i:s"));
-            $img_id=$img->get_id($name);
-
+            $img_id=$img->add($name,date("Y-m-d H:i:s"));
+            if(!$name)
+                $img_id=1;
         }
         if ($_POST) {
             $book= new Data_book();
@@ -57,7 +56,7 @@ class Controller_book_addbook extends Controller_Base_View implements Controller
             $author = $_POST["author"];
             $ganre = $_POST["ganre"];
             $year = $_POST["year"];
-            $book_id = $book->add($name,$author,$ganre, $year,$img_id );
+            $book_id = $book->add($name,$author,$ganre, $year,$img_id);
             redirect('/?go=book&id=' . $book_id); // сделать переброс на добавленую страницу
         }
 

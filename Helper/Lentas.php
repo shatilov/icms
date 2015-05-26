@@ -45,7 +45,7 @@ class Helper_Lentas
                                  <img src="' . $image->get_avatar($uss->get_ava($c["user_id"])) . '">
                                     ' .$uss->get_name( $c["user_id"])  . '
                                     </div>
-                            <div class="txt" > ' . $c["text"] .'</div>
+                            <div class="txt" > ' . htmlspecialchars($c["text"]) .'</div>
                                 ' . $c["date"] . '
                             </div>';
 
