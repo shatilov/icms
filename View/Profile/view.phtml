@@ -1,27 +1,18 @@
-    <?php $user = Controller_Profile_View::gl3();
-    $s = $user->toArray() ; ?>
+
+<?php $user = Controller_Profile_View::gl3();
+    $s = $user->toArray() ;
+    $imggg= new Data_image();
+    ?>
+
     <div class="page-header">
-
-
-        <h1>Профиль </h1>
-
+        <h1>Профиль</h1>
     </div>
 
+    <img src =" <?php echo $imggg->get_avatar($s['avatar_id']); ?>">
 
+                Имя           <?php echo $s["name"]; ?><br>
 
-
-                        <?php
-                        if( $s["sex"])
-                            echo '<img src ="http://cs625327.vk.me/v625327236/31c72/IKMrkjR-pj8.jpg"';
-                        else
-                            echo '<img src ="http://cs625327.vk.me/v625327236/31c6b/KYMKjHBm2tY.jpg"';
-                        ?>
-
-    <pre>
-                Имя           <?php echo $s["name"]; ?>
                 Email         <?php echo $s["email"]; ?> <br>
-    </pre>
-            </div>
-            </div>
-        </div>
-    </div>
+
+
+
