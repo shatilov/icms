@@ -11,18 +11,14 @@ class Data_image extends Data_MySql
 
     public function add($name,$date)
     {
-        $sql = "INSERT INTO images (`name`, `date`)
-        VALUES ('{$name}','{$date}')";
-        return $this->getDb()->query($sql);
+        $fields = array(
+            'name' => $name ,
+            'date'=> $date
+        );
+
+        return $this->getDb()->simpleInsert('images', $fields);
     }
-    public function get_id($name)
-    {
-       $sql= "SELECT img_id
-                FROM  `images`
-                WHERE name =  '{$name}'";
-        $r= $this->getDb()->query($sql)->fetch();
-        return $r['img_id'];
-    }
+
     public function get_url($id)
     {
         $sql= "SELECT name
@@ -30,6 +26,14 @@ class Data_image extends Data_MySql
                 WHERE img_id =  '{$id}'";
         $r= $this->getDb()->query($sql)->fetch();
         return $r['name'];
+    }
+    public function  get_avatar($id)
+    {
+        $sql= "SELECT url
+                FROM  `avatar`
+                WHERE `avatar_id` =  '{$id}'";
+        $r= $this->getDb()->query($sql)->fetch();
+        return $r['url'];
     }
 
 }
