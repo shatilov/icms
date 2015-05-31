@@ -7,6 +7,6 @@ return array(
     'exit'      => 'Controller_User_Exit',
 	'admin'     => 'Controller_Admin_View',
     'Profile'   => 'Controller_Profile_View',
-    'book'      => 'Controller_book_View',
-    'addbook'      => 'Controller_book_addbook',
+    'book'      => 'Controller_Book_View',
+    'addbook'      => 'Controller_Book_addbook',
 );
