@@ -42,7 +42,7 @@ class Data_Menu extends Data_MySql{
 				));
 			}
             $menu =  array_merge($menu ,  array(
-                "Профиль"          => "Profile",
+                "Профиль"          => "profile",
             ));
 
 		}
